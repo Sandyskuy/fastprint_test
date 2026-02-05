@@ -1,5 +1,4 @@
 1. Deskripsi Project
-  
    Project ini merupakan aplikasi backend berbasis Django + Django REST Framework yang digunakan
    untuk mengelola data Produk, Kategori, dan Status Produk (bisa dijual / tidak bisa dijual).
    Aplikasi ini dibuat sebagai bagian dari tes teknis masuk perusahaan,
