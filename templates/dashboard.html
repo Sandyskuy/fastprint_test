@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Produk</title>
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">📊 Dashboard Produk</h2>
+
+    <!-- SUMMARY CARD -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card text-bg-primary">
+                <div class="card-body">
+                    <h5>Total Produk</h5>
+                    <h3>{{ total_produk }}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-bg-success">
+                <div class="card-body">
+                    <h5>Total Kategori</h5>
+                    <h3>{{ total_kategori }}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-bg-warning">
+                <div class="card-body">
+                    <h5>Total Status</h5>
+                    <h3>{{ total_status }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TABLE PRODUK -->
+    <div class="card">
+        <div class="card-header fw-bold">
+            📦 Daftar Produk
+        </div>
+        <div class="card-body table-responsive">
+            <table class="table table-bordered table-striped align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama Produk</th>
+                        <th>Harga</th>
+                        <th>Kategori</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in produk_list %}
+                    <tr>
+                        <td>{{ p.id_produk }}</td>
+                        <td>{{ p.nama_produk }}</td>
+                        <td>Rp {{ p.harga }}</td>
+                        <td>{{ p.kategori.nama_kategori }}</td>
+                        <td>{{ p.status.nama_status }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center">Tidak ada data</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
