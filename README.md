@@ -14,19 +14,19 @@
    Nama database : fastprint_test_db
    
    **Tabel kategori**
-   id_kategori	  | INT (PK)
+   id_kategori	  | INT (PK), 
    nama_kategori	| VARCHAR
 
    **Tabel status**
-   id_status	    | INT (PK)
+   id_status	    | INT (PK), 
    nama_status	  | VARCHAR
 
    **Tabel produk**
-   id_produk	    | INT (PK)
-   nama_produk	  | VARCHAR
-   harga	        | decimal
-   kategori_id	  | FK → kategori
-   status_id	    | FK → status
+   id_produk	    | INT (PK),
+   nama_produk	  | VARCHAR,
+   harga	        | decimal,
+   kategori_id	  | FK → kategori,
+   status_id	    | FK → status,
 
 ### Setup Project
    **Git Clone**
